@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Download } from "lucide-react";
+import { FaBars, FaTimes, FaDownload } from "react-icons/fa";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -44,7 +44,7 @@ export default function Navbar() {
             download
             className="flex items-center gap-2 rounded-lg bg-cyan-500 px-4 py-2 text-white hover:bg-cyan-600 transition"
           >
-            <Download size={18} />
+            <FaDownload size={16} />
             Resume
           </a>
         </nav>
@@ -53,10 +53,15 @@ export default function Navbar() {
         <button
           className="md:hidden text-white"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {menuOpen ? (
+            <FaTimes size={26} />
+          ) : (
+            <FaBars size={26} />
+          )}
         </button>
-      </div>   
+      </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
@@ -78,7 +83,7 @@ export default function Navbar() {
               download
               className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-cyan-500 px-4 py-3 text-white hover:bg-cyan-600 transition"
             >
-              <Download size={18} />
+              <FaDownload size={16} />
               Download Resume
             </a>
           </nav>

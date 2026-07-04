@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import {
-  Award,
-  Calendar,
-  ShieldCheck,
-  BadgeCheck,
-} from "lucide-react";
+  FaAward,
+  FaCalendarAlt,
+  FaShieldAlt,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 interface CertificationType {
   title: string;
@@ -23,7 +23,7 @@ const certifications: CertificationType[] = [
     title: "Certified Scrum Product Owner (CSPO)",
     organization: "Scrum Alliance",
     year: "2024",
-    icon: <Award size={42} />,
+    icon: <FaAward size={42} />,
     color: "from-cyan-500 to-blue-600",
     description:
       "Professional certification demonstrating expertise in Product Ownership, Agile Product Management, Product Vision, Roadmap Planning, Customer Value Delivery, and Agile product strategy.",
@@ -39,7 +39,7 @@ const certifications: CertificationType[] = [
     title: "Certified Scrum Master (CSM)",
     organization: "Scrum Alliance",
     year: "2018",
-    icon: <ShieldCheck size={42} />,
+    icon: <FaShieldAlt size={42} />,
     color: "from-purple-500 to-pink-600",
     description:
       "Professional certification validating Scrum principles, Sprint Planning, Agile coaching, servant leadership, and high-performing cross-functional team collaboration.",
@@ -60,7 +60,9 @@ export default function Certification() {
       className="bg-slate-950 py-24 text-white"
     >
       <div className="container mx-auto px-6">
+
         {/* Heading */}
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,6 +87,7 @@ export default function Certification() {
         </motion.div>
 
         {/* Certification Cards */}
+
         <div className="grid gap-10 md:grid-cols-2">
           {certifications.map((cert, index) => (
             <motion.div
@@ -103,17 +106,19 @@ export default function Certification() {
               className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-xl transition-all"
             >
               {/* Header */}
+
               <div
                 className={`bg-gradient-to-r ${cert.color} p-8`}
               >
                 <div className="flex items-center justify-between">
                   <div>{cert.icon}</div>
 
-                  <BadgeCheck size={42} />
+                  <FaCheckCircle size={42} />
                 </div>
               </div>
 
               {/* Body */}
+
               <div className="p-8">
                 <h3 className="text-2xl font-bold">
                   {cert.title}
@@ -124,7 +129,7 @@ export default function Certification() {
                 </p>
 
                 <div className="mt-5 flex items-center gap-2 text-gray-400">
-                  <Calendar size={18} />
+                  <FaCalendarAlt size={18} />
                   <span>{cert.year}</span>
                 </div>
 
@@ -133,6 +138,7 @@ export default function Certification() {
                 </p>
 
                 {/* Skills */}
+
                 <div className="mt-8 flex flex-wrap gap-3">
                   {cert.skills.map((skill) => (
                     <span
@@ -149,6 +155,7 @@ export default function Certification() {
         </div>
 
         {/* Bottom CTA */}
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{
@@ -159,7 +166,7 @@ export default function Certification() {
           viewport={{ once: true }}
           className="mt-20 rounded-3xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-700 p-12 text-center shadow-2xl"
         >
-          <Award
+          <FaAward
             size={60}
             className="mx-auto mb-6"
           />
@@ -188,6 +195,7 @@ export default function Certification() {
             View More Achievements
           </motion.button>
         </motion.div>
+
       </div>
     </section>
   );
