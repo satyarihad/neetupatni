@@ -2,18 +2,18 @@
 
 import { motion } from "framer-motion";
 import {
-  Target,
-  Briefcase,
-  BarChart3,
-  Workflow,
-  Database,
-  CheckCircle,
-} from "lucide-react";
+  FaBullseye,
+  FaBriefcase,
+  FaChartBar,
+  FaProjectDiagram,
+  FaDatabase,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 const skillCategories = [
   {
     title: "Product Management",
-    icon: <Target size={32} />,
+    icon: <FaBullseye size={32} />,
     color: "text-cyan-400",
     skills: [
       "Product Vision",
@@ -30,7 +30,7 @@ const skillCategories = [
   },
   {
     title: "Agile & Delivery",
-    icon: <Workflow size={32} />,
+    icon: <FaProjectDiagram size={32} />,
     color: "text-emerald-400",
     skills: [
       "Agile",
@@ -45,7 +45,7 @@ const skillCategories = [
   },
   {
     title: "Product Artifacts",
-    icon: <Briefcase size={32} />,
+    icon: <FaBriefcase size={32} />,
     color: "text-orange-400",
     skills: [
       "BRD",
@@ -60,7 +60,7 @@ const skillCategories = [
   },
   {
     title: "Tools & Technologies",
-    icon: <Database size={32} />,
+    icon: <FaDatabase size={32} />,
     color: "text-pink-400",
     skills: [
       "Jira",
@@ -97,7 +97,7 @@ export default function Skills() {
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .6 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-20"
         >
@@ -130,9 +130,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15 }}
               viewport={{ once: true }}
-              whileHover={{
-                y: -8,
-              }}
+              whileHover={{ y: -8 }}
               className="bg-slate-950 border border-slate-800 rounded-3xl p-8"
             >
 
@@ -157,7 +155,7 @@ export default function Skills() {
                     className="flex items-center gap-3 bg-slate-900 rounded-xl p-3"
                   >
 
-                    <CheckCircle
+                    <FaCheckCircle
                       size={18}
                       className={category.color}
                     />
@@ -178,13 +176,13 @@ export default function Skills() {
 
         </div>
 
-        {/* Expertise */}
+        {/* Professional Expertise */}
 
         <div className="mt-24">
 
           <div className="flex items-center gap-3 mb-10">
 
-            <BarChart3
+            <FaChartBar
               size={34}
               className="text-cyan-400"
             />

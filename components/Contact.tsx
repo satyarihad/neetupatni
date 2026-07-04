@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-} from "lucide-react";
-import { FaLinkedinIn } from "react-icons/fa";
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaPaperPlane,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -56,10 +56,12 @@ export default function Contact() {
 
             <div className="space-y-8">
 
+              {/* Email */}
+
               <div className="flex items-center gap-5">
 
                 <div className="bg-cyan-500 p-4 rounded-xl">
-                  <Mail size={24} />
+                  <FaEnvelope size={24} />
                 </div>
 
                 <div>
@@ -78,10 +80,12 @@ export default function Contact() {
 
               </div>
 
+              {/* Phone */}
+
               <div className="flex items-center gap-5">
 
                 <div className="bg-cyan-500 p-4 rounded-xl">
-                  <Phone size={24} />
+                  <FaPhoneAlt size={24} />
                 </div>
 
                 <div>
@@ -101,10 +105,12 @@ export default function Contact() {
 
               </div>
 
+              {/* Location */}
+
               <div className="flex items-center gap-5">
 
                 <div className="bg-cyan-500 p-4 rounded-xl">
-                  <MapPin size={24} />
+                  <FaMapMarkerAlt size={24} />
                 </div>
 
                 <div>
@@ -121,6 +127,8 @@ export default function Contact() {
 
               </div>
 
+              {/* LinkedIn */}
+
               <div className="flex items-center gap-5">
 
                 <div className="bg-cyan-500 p-4 rounded-xl">
@@ -136,6 +144,7 @@ export default function Contact() {
                   <a
                     href="https://linkedin.com/in/neetupatni"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xl hover:text-cyan-400 transition"
                   >
                     linkedin.com/in/neetupatni
@@ -190,7 +199,7 @@ export default function Contact() {
               type="submit"
               className="mt-8 w-full bg-cyan-500 hover:bg-cyan-600 transition rounded-xl py-4 flex justify-center items-center gap-3 text-lg font-semibold"
             >
-              <Send size={20} />
+              <FaPaperPlane size={18} />
 
               Send Message
 

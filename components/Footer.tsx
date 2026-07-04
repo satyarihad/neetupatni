@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Mail, Phone, ArrowUp } from "lucide-react";
-import { FaLinkedinIn } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaArrowUp,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const quickLinks = [
   { title: "Home", href: "#home" },
@@ -24,11 +28,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-950 text-white border-t border-slate-800">
-
       <div className="container mx-auto px-6 py-16">
-
         <div className="grid lg:grid-cols-3 gap-12">
-
           {/* Left */}
 
           <motion.div
@@ -36,7 +37,6 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-
             <h2 className="text-4xl font-bold">
               Neetu
               <span className="text-cyan-400">.</span>
@@ -47,7 +47,6 @@ export default function Footer() {
               building SaaS, FinTech, Blockchain, Agritech,
               EdTech and Web3 products.
             </p>
-
           </motion.div>
 
           {/* Quick Links */}
@@ -55,33 +54,25 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: .15 }}
+            transition={{ delay: 0.15 }}
             viewport={{ once: true }}
           >
-
             <h3 className="text-2xl font-semibold mb-6">
               Quick Links
             </h3>
 
             <ul className="space-y-4">
-
               {quickLinks.map((link) => (
-
                 <li key={link.title}>
-
                   <Link
                     href={link.href}
                     className="text-gray-400 hover:text-cyan-400 transition"
                   >
                     {link.title}
                   </Link>
-
                 </li>
-
               ))}
-
             </ul>
-
           </motion.div>
 
           {/* Contact */}
@@ -89,19 +80,19 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: .3 }}
+            transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-
             <h3 className="text-2xl font-semibold mb-6">
               Contact
             </h3>
 
             <div className="space-y-5">
-
               <div className="flex items-center gap-3">
-
-                <Mail className="text-cyan-400" />
+                <FaEnvelope
+                  size={18}
+                  className="text-cyan-400"
+                />
 
                 <a
                   href="mailto:neetupatni5@gmail.com"
@@ -109,12 +100,13 @@ export default function Footer() {
                 >
                   neetupatni5@gmail.com
                 </a>
-
               </div>
 
               <div className="flex items-center gap-3">
-
-                <Phone className="text-cyan-400" />
+                <FaPhoneAlt
+                  size={18}
+                  className="text-cyan-400"
+                />
 
                 <a
                   href="tel:+919887681149"
@@ -122,14 +114,13 @@ export default function Footer() {
                 >
                   +91 9887681149
                 </a>
-
               </div>
 
               <div className="flex items-center gap-3">
-
-                <span className="text-cyan-400 text-lg">
-                  <FaLinkedinIn size={20} />
-                </span>
+                <FaLinkedinIn
+                  size={18}
+                  className="text-cyan-400"
+                />
 
                 <a
                   href="https://linkedin.com/in/neetupatni"
@@ -139,19 +130,14 @@ export default function Footer() {
                 >
                   LinkedIn
                 </a>
-
               </div>
-
             </div>
-
           </motion.div>
-
         </div>
 
         {/* Divider */}
 
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-
           <p className="text-gray-500 text-center">
             © {new Date().getFullYear()} Neetu Patni. All Rights Reserved.
           </p>
@@ -160,13 +146,10 @@ export default function Footer() {
             onClick={scrollTop}
             className="bg-cyan-500 hover:bg-cyan-600 transition p-4 rounded-full shadow-lg"
           >
-            <ArrowUp size={20} />
+            <FaArrowUp size={18} />
           </button>
-
         </div>
-
       </div>
-
     </footer>
   );
 }

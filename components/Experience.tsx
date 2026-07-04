@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import {
-  Briefcase,
-  Calendar,
-  MapPin,
-  ArrowRight,
-} from "lucide-react";
+  FaBriefcase,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaArrowRight,
+} from "react-icons/fa";
 
 const experiences = [
   {
@@ -82,7 +82,6 @@ const experiences = [
   },
 ];
 
-
 export default function Experience() {
   return (
     <section
@@ -90,7 +89,6 @@ export default function Experience() {
       className="bg-slate-950 text-white py-24"
     >
       <div className="container mx-auto px-6">
-
         {/* Heading */}
 
         <motion.div
@@ -118,26 +116,23 @@ export default function Experience() {
         {/* Timeline */}
 
         <div className="relative">
-
           {/* Vertical Line */}
 
           <div className="hidden md:block absolute left-8 top-0 bottom-0 w-1 bg-cyan-500 rounded-full"></div>
 
           {experiences.map((exp, index) => (
-
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * .15 }}
+              transition={{ delay: index * 0.15 }}
               viewport={{ once: true }}
               className="relative flex mb-14"
             >
-
               {/* Timeline Circle */}
 
               <div className="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-cyan-500 z-10">
-                <Briefcase size={28} />
+                <FaBriefcase size={28} />
               </div>
 
               {/* Card */}
@@ -149,11 +144,8 @@ export default function Experience() {
                 }}
                 className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:ml-10 flex-1 shadow-xl"
               >
-
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
-
                   <div>
-
                     <h3 className="text-3xl font-bold">
                       {exp.role}
                     </h3>
@@ -161,40 +153,28 @@ export default function Experience() {
                     <p className="text-cyan-400 mt-2 text-xl">
                       {exp.company}
                     </p>
-
                   </div>
 
                   <div className="mt-5 lg:mt-0">
-
                     <div className="flex items-center gap-2 text-gray-400">
-
-                      <Calendar size={18} />
-
+                      <FaCalendarAlt size={18} />
                       {exp.duration}
-
                     </div>
 
                     <div className="flex items-center gap-2 mt-2 text-gray-400">
-
-                      <MapPin size={18} />
-
+                      <FaMapMarkerAlt size={18} />
                       {exp.location}
-
                     </div>
-
                   </div>
-
                 </div>
 
                 <div className="mt-8 space-y-4">
-
                   {exp.achievements.map((achievement, i) => (
-
                     <div
                       key={i}
                       className="flex gap-3 items-start"
                     >
-                      <ArrowRight
+                      <FaArrowRight
                         size={18}
                         className="text-cyan-400 mt-1"
                       />
@@ -202,21 +182,13 @@ export default function Experience() {
                       <p className="text-gray-300 leading-7">
                         {achievement}
                       </p>
-
                     </div>
-
                   ))}
-
                 </div>
-
               </motion.div>
-
             </motion.div>
-
           ))}
-
         </div>
-
       </div>
     </section>
   );

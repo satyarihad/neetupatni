@@ -2,21 +2,21 @@
 
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
-  CheckCircle,
-  Globe,
-  Database,
-  Wallet,
-  Ticket,
-  Tractor,
-  Shield,
-} from "lucide-react";
+  FaArrowUp,
+  FaCheckCircle,
+  FaGlobe,
+  FaDatabase,
+  FaWallet,
+  FaTicketAlt,
+  FaTractor,
+  FaShieldAlt,
+} from "react-icons/fa";
 
 const projects = [
   {
     title: "Carbon Credit Marketplace",
     company: "Hashgraph Group",
-    icon: <Wallet size={34} />,
+    icon: <FaWallet size={34} />,
     color: "from-cyan-500 to-blue-600",
     description:
       "Government-backed blockchain marketplace enabling carbon credit issuance, trading and lifecycle management.",
@@ -38,7 +38,7 @@ const projects = [
   {
     title: "Supply Chain Traceability",
     company: "Hashgraph Group",
-    icon: <Globe size={34} />,
+    icon: <FaGlobe size={34} />,
     color: "from-green-500 to-emerald-600",
     description:
       "Web3 supply chain platform providing end-to-end traceability using decentralized technologies.",
@@ -60,7 +60,7 @@ const projects = [
   {
     title: "B2B SaaS Compliance Platform",
     company: "Product Consultant",
-    icon: <Shield size={34} />,
+    icon: <FaShieldAlt size={34} />,
     color: "from-orange-500 to-red-500",
     description:
       "Compliance automation platform helping food manufacturers meet FDA labeling regulations.",
@@ -82,7 +82,7 @@ const projects = [
   {
     title: "NFT Marketplace",
     company: "Metaverse Blockchain",
-    icon: <Database size={34} />,
+    icon: <FaDatabase size={34} />,
     color: "from-purple-500 to-pink-600",
     description:
       "Digital collectibles ecosystem with NFT minting, AI-powered content generation and engagement features.",
@@ -104,7 +104,7 @@ const projects = [
   {
     title: "QR Ticketing Platform",
     company: "Metaverse Blockchain",
-    icon: <Ticket size={34} />,
+    icon: <FaTicketAlt size={34} />,
     color: "from-blue-500 to-indigo-600",
     description:
       "Real-time event ticketing system supporting QR validation, attendee tracking and analytics.",
@@ -125,7 +125,7 @@ const projects = [
   {
     title: "Agritech Procurement Platform",
     company: "Ergos",
-    icon: <Tractor size={34} />,
+    icon: <FaTractor size={34} />,
     color: "from-lime-500 to-green-600",
     description:
       "Digital procurement platform for grain buying, warehouse management, lending and inventory.",
@@ -186,9 +186,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{
-                y: -10,
-              }}
+              whileHover={{ y: -10 }}
               className="rounded-3xl border border-slate-800 bg-slate-950 overflow-hidden shadow-xl"
             >
 
@@ -199,7 +197,10 @@ export default function Projects() {
               >
                 <div>{project.icon}</div>
 
-                <ArrowUpRight />
+                <FaArrowUp
+                  className="rotate-45"
+                  size={20}
+                />
               </div>
 
               {/* Content */}
@@ -242,7 +243,7 @@ export default function Projects() {
                       key={achievement}
                       className="flex gap-3"
                     >
-                      <CheckCircle
+                      <FaCheckCircle
                         size={18}
                         className="text-cyan-400 mt-1"
                       />

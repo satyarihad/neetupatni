@@ -2,35 +2,35 @@
 
 import { motion } from "framer-motion";
 import {
-  Briefcase,
-  Target,
-  Users,
-  BarChart3,
-  Rocket,
-  CheckCircle,
-} from "lucide-react";
+  FaBriefcase,
+  FaBullseye,
+  FaUsers,
+  FaChartBar,
+  FaRocket,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 const highlights = [
   {
-    icon: <Briefcase size={30} />,
+    icon: <FaBriefcase size={30} />,
     title: "15+ Years Experience",
     description:
       "Extensive experience delivering enterprise software products across multiple industries.",
   },
   {
-    icon: <Rocket size={30} />,
+    icon: <FaRocket size={30} />,
     title: "Product Strategy",
     description:
       "Experienced in defining product vision, roadmap planning and go-to-market execution.",
   },
   {
-    icon: <Users size={30} />,
+    icon: <FaUsers size={30} />,
     title: "Stakeholder Management",
     description:
       "Successfully collaborated with engineering teams, business leaders and customers.",
   },
   {
-    icon: <BarChart3 size={30} />,
+    icon: <FaChartBar size={30} />,
     title: "Data Driven",
     description:
       "Focused on analytics, customer feedback and business metrics for product decisions.",
@@ -65,18 +65,13 @@ const competencies = [
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="bg-slate-950 py-24 text-white"
-    >
+    <section id="about" className="bg-slate-950 py-24 text-white">
       <div className="container mx-auto px-6">
-
         {/* Heading */}
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .6 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -100,9 +95,7 @@ export default function About() {
         </motion.div>
 
         {/* Statistics */}
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-
           {[
             {
               number: "15+",
@@ -135,13 +128,10 @@ export default function About() {
               </p>
             </motion.div>
           ))}
-
         </div>
 
         {/* Highlights */}
-
         <div className="grid md:grid-cols-2 gap-8 mb-20">
-
           {highlights.map((item, index) => (
             <motion.div
               key={index}
@@ -161,20 +151,16 @@ export default function About() {
               </p>
             </motion.div>
           ))}
-
         </div>
 
         {/* Industries */}
-
         <div className="mb-20">
-
           <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <Target className="text-cyan-400" />
+            <FaBullseye className="text-cyan-400" />
             Industry Expertise
           </h3>
 
           <div className="flex flex-wrap gap-4">
-
             {industries.map((industry) => (
               <span
                 key={industry}
@@ -183,28 +169,23 @@ export default function About() {
                 {industry}
               </span>
             ))}
-
           </div>
-
         </div>
 
         {/* Core Competencies */}
-
         <div>
-
           <h3 className="text-3xl font-bold mb-8">
             Core Competencies
           </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-
             {competencies.map((skill) => (
               <motion.div
                 key={skill}
                 whileHover={{ x: 8 }}
                 className="flex items-center gap-4 bg-slate-900 border border-slate-800 rounded-xl p-5"
               >
-                <CheckCircle
+                <FaCheckCircle
                   size={22}
                   className="text-cyan-400"
                 />
@@ -212,11 +193,8 @@ export default function About() {
                 <span>{skill}</span>
               </motion.div>
             ))}
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
